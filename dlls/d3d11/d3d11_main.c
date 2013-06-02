@@ -54,3 +54,33 @@ HRESULT WINAPI D3D11CreateDevice(IDXGIAdapter *adapter, D3D_DRIVER_TYPE driver_t
           flags, feature_levels, levels, sdk_version, device, feature_level, context);
     return E_OUTOFMEMORY;
 }
+
+// http://msdn.microsoft.com/en-us/library/windows/desktop/ff476083%28v=vs.85%29.aspx
+HRESULT WINAPI D3D11CreateDeviceAndSwapChain(IDXGIAdapter *adapter, D3D_DRIVER_TYPE driver_type, HMODULE swrast, UINT flags,
+                                 const D3D_FEATURE_LEVEL feature_levels, UINT levels, UINT sdk_version,
+                                 IDXGISwapChain **swap_chain, ID3D11Device **device, D3D_FEATURE_LEVEL *feature_level, ID3D11DeviceContext **context)
+{
+    FIXME("stub: adapter %p, driver_type %s, swrast %p, flags %#x, feature_levels %d, levels %#x, sdk_version %d, "
+          "swap_chain %p, device %p, feature_level %p, context %p\n", adapter, debug_d3d_driver_type(driver_type), swrast,
+          flags, feature_levels, levels, sdk_version, swap_chain, device, feature_level, context);
+    return E_OUTOFMEMORY;
+}
+
+
+
+
+
+// http://msdn.microsoft.com/en-us/library/windows/desktop/ff476329%28v=vs.85%29.aspx
+/*
+typedef enum D3D_FEATURE_LEVEL { 
+  D3D_FEATURE_LEVEL_9_1   = 0x9100,
+  D3D_FEATURE_LEVEL_9_2   = 0x9200,
+  D3D_FEATURE_LEVEL_9_3   = 0x9300,
+  D3D_FEATURE_LEVEL_10_0  = 0xa000,
+  D3D_FEATURE_LEVEL_10_1  = 0xa100,
+  D3D_FEATURE_LEVEL_11_0  = 0xb000,
+  D3D_FEATURE_LEVEL_11_1  = 0xb100
+} D3D_FEATURE_LEVEL;
+
+*/
+
