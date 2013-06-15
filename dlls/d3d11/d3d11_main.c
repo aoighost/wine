@@ -28,6 +28,21 @@
 
 WINE_DEFAULT_DEBUG_CHANNEL(d3d11);
 
+
+/* At process attach */
+BOOL WINAPI DllMain(HINSTANCE hInstDLL, DWORD fdwReason, LPVOID lpv)
+{
+    FIXME("DX11 multithreading support not implemented yet. Forcing single threaded mode.\n");
+    TRACE("fdwReason=%d\n", fdwReason);
+    switch(fdwReason)
+    {
+    case DLL_PROCESS_ATTACH:
+        DisableThreadLibraryCalls( hInstDLL );
+        break;
+    }
+    return TRUE;
+}
+
 static const char *debug_d3d_driver_type(D3D_DRIVER_TYPE driver_type)
 {
     switch(driver_type)
